@@ -230,4 +230,28 @@
       transform: translateY(-5px) rotate(0.5deg);
     }
   }
+
+  /* Performance optimizations for animations */
+  .animate-floatSlow,
+  .animate-gradientShift,
+  .animate-gradientShiftReverse,
+  .animate-particleFloat,
+  .animate-lineGlow {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-floatSlow,
+    .animate-gradientShift,
+    .animate-gradientShiftReverse,
+    .animate-particleFloat,
+    .animate-lineGlow {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
 }

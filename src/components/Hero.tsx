@@ -37,12 +37,76 @@ const Hero: React.FC = () => {
   }, []);
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-8">
-      {/* Clean Background */}
+      {/* Animated Background */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-slate-900"></div>
-        <div className="absolute w-[400px] h-[400px] -top-24 -left-24 bg-blue-500 rounded-full blur-[80px] opacity-20 animate-float"></div>
-        <div className="absolute w-[500px] h-[500px] -bottom-36 -right-36 bg-blue-600 rounded-full blur-[80px] opacity-20 animate-float [animation-delay:5s]"></div>
-        <div className="absolute w-[350px] h-[350px] top-1/2 right-[20%] bg-indigo-500 rounded-full blur-[80px] opacity-20 animate-float [animation-delay:10s]"></div>
+        {/* Base gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950"></div>
+
+        {/* Animated gradient overlays */}
+        <div
+          className="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-indigo-600/20 animate-gradientShift"
+          style={{ backgroundSize: "200% 200%" }}
+        ></div>
+        <div
+          className="absolute inset-0 bg-gradient-to-br from-transparent via-blue-500/10 to-purple-500/10 animate-gradientShiftReverse"
+          style={{ backgroundSize: "200% 200%" }}
+        ></div>
+
+        {/* Large floating orbs */}
+        <div className="absolute w-[400px] h-[400px] -top-24 -left-24 bg-blue-500 rounded-full blur-[80px] opacity-30 animate-floatSlow"></div>
+        <div
+          className="absolute w-[500px] h-[500px] -bottom-36 -right-36 bg-blue-600 rounded-full blur-[80px] opacity-30 animate-floatSlow"
+          style={{ animationDelay: "5s" }}
+        ></div>
+        <div
+          className="absolute w-[350px] h-[350px] top-1/2 right-[20%] bg-indigo-500 rounded-full blur-[80px] opacity-30 animate-floatSlow"
+          style={{ animationDelay: "10s" }}
+        ></div>
+
+        {/* Smaller floating particles */}
+        <div className="absolute w-2 h-2 top-[20%] left-[10%] bg-blue-400 rounded-full animate-particleFloat opacity-60"></div>
+        <div
+          className="absolute w-3 h-3 top-[60%] left-[15%] bg-purple-400 rounded-full animate-particleFloat opacity-50"
+          style={{ animationDelay: "2s" }}
+        ></div>
+        <div
+          className="absolute w-1 h-1 top-[30%] right-[25%] bg-indigo-400 rounded-full animate-particleFloat opacity-70"
+          style={{ animationDelay: "4s" }}
+        ></div>
+        <div
+          className="absolute w-2 h-2 top-[70%] right-[35%] bg-blue-300 rounded-full animate-particleFloat opacity-60"
+          style={{ animationDelay: "6s" }}
+        ></div>
+        <div
+          className="absolute w-1 h-1 top-[45%] left-[30%] bg-purple-300 rounded-full animate-particleFloat opacity-50"
+          style={{ animationDelay: "8s" }}
+        ></div>
+        <div
+          className="absolute w-3 h-3 top-[15%] right-[15%] bg-indigo-300 rounded-full animate-particleFloat opacity-40"
+          style={{ animationDelay: "1s" }}
+        ></div>
+        <div
+          className="absolute w-2 h-2 top-[80%] left-[60%] bg-blue-200 rounded-full animate-particleFloat opacity-60"
+          style={{ animationDelay: "3s" }}
+        ></div>
+        <div
+          className="absolute w-1 h-1 top-[25%] right-[45%] bg-purple-200 rounded-full animate-particleFloat opacity-50"
+          style={{ animationDelay: "7s" }}
+        ></div>
+
+        {/* Animated lines/connections */}
+        <div
+          className="absolute top-[30%] left-[20%] w-32 h-px bg-gradient-to-r from-transparent via-blue-400/30 to-transparent animate-lineGlow"
+          style={{ animationDelay: "1s" }}
+        ></div>
+        <div
+          className="absolute top-[60%] right-[30%] w-24 h-px bg-gradient-to-r from-transparent via-purple-400/30 to-transparent animate-lineGlow"
+          style={{ animationDelay: "3s" }}
+        ></div>
+        <div
+          className="absolute top-[45%] left-[50%] w-16 h-px bg-gradient-to-r from-transparent via-indigo-400/30 to-transparent animate-lineGlow"
+          style={{ animationDelay: "5s" }}
+        ></div>
       </div>
 
       {/* Content */}
@@ -56,50 +120,18 @@ const Hero: React.FC = () => {
             <span className="animate-blink">|</span>
           </span>
         </div>
-        <div className="floating-letters text-xl md:text-2xl lg:text-3xl text-gray-300 mb-4 animate-fadeInUp [animation-delay:0.2s]">
-          <span>F</span>
-          <span>u</span>
-          <span>l</span>
-          <span>l</span>
-          <span> </span>
-          <span>S</span>
-          <span>t</span>
-          <span>a</span>
-          <span>c</span>
-          <span>k</span>
-          <span> </span>
-          <span>D</span>
-          <span>e</span>
-          <span>v</span>
-          <span>e</span>
-          <span>l</span>
-          <span>o</span>
-          <span>p</span>
-          <span>e</span>
-          <span>r</span>
-          <span> </span>
-          <span>&</span>
-          <span> </span>
-          <span>T</span>
-          <span>e</span>
-          <span>c</span>
-          <span>h</span>
-          <span>n</span>
-          <span>i</span>
-          <span>c</span>
-          <span>a</span>
-          <span>l</span>
-          <span> </span>
-          <span>C</span>
-          <span>o</span>
-          <span>n</span>
-          <span>s</span>
-          <span>u</span>
-          <span>l</span>
-          <span>t</span>
-          <span>a</span>
-          <span>n</span>
-          <span>t</span>
+        <div className="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-4 animate-fadeInUp [animation-delay:0.2s]">
+          {"Full Stack Developer & Technical Consultant"
+            .split("")
+            .map((char, index) => (
+              <span
+                key={index}
+                className="inline-block animate-waveText"
+                style={{ animationDelay: `${index * 0.05}s` }}
+              >
+                {char === " " ? "\u00A0" : char}
+              </span>
+            ))}
         </div>
         <p className="text-base md:text-lg lg:text-xl text-gray-400 mb-10 animate-fadeInUp [animation-delay:0.4s]">
           Transforming ideas into elegant, scalable solutions
